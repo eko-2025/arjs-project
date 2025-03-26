@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Set character encoding and viewport for responsiveness -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include A-Frame library -->
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+    <!-- Include AR.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ar.js/2.1.1/aframe-ar.min.js"></script>
+
+    <!-- Add a title to your project -->
+    <title>AR.js Hiro Marker Example</title>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-      <!-- Add a 3D box -->
+    <!-- A-Frame Scene -->
+    <a-scene embedded arjs debug>
+      <!-- Add a default 3D box in the scene -->
       <a-box position="0 0.5 0" material="color: blue;" scale="1 1 1"></a-box>
-      
-      <!-- Add a marker -->
-      <a-marker preset="hiro">
+
+      <!-- Add a marker with the Hiro pattern -->
+      <a-marker type="pattern" url="data/hiro.patt">
+        <!-- 3D object to display when the marker is detected -->
         <a-box position="0 0.5 0" material="color: red;" scale="1 1 1"></a-box>
       </a-marker>
-      
+
+      <!-- Add a camera to the scene -->
       <a-entity camera></a-entity>
     </a-scene>
   </body>
